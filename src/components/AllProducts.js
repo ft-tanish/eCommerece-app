@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import useProducts from '../utils/useProducts'
 import { ProductCard } from './ProductCard';
 import Shimmer from './Shimmer';
@@ -8,7 +9,6 @@ const AllProducts = () => {
     const [allProducts, filteredProducts, searchText, setSearchText, handleSearch] = useProducts();
 
     if (!allProducts) return null;
-    console.log(allProducts)
 
     return (
         <>
@@ -30,9 +30,9 @@ const AllProducts = () => {
                         {filteredProducts?.length === 0 ? <h3>No such product with this name</h3> :
                             filteredProducts?.map((product) => {
                                 return (
-                                    // <Link to={"/restaurant/" + restaurant?.data?.data?.id} key={restaurant?.data?.id}>
-                                    <ProductCard {...product} key={product?.id} />
-                                    // </Link>
+                                    <Link to={"/products/" + product?.id} key={product?.id}>
+                                        <ProductCard {...product} key={product?.id} />
+                                    </Link>
                                 )
                             })
                         }
