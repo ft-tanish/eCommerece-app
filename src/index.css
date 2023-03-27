@@ -27,6 +27,15 @@ code {
   background-color: #fff;
 }
 
+.search-cointainer {
+  padding-left: 1%;
+}
+
+.search-input {
+  width: 15rem;
+  text-align: left;
+}
+
 
 .shimmer-card {
   width: 15rem;
