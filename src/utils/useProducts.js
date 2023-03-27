@@ -4,7 +4,7 @@ import { filterData } from './helper';
 
 const useProducts = () => {
 
-    const [allProducts, setAllProducts] = useState();
+    const [allProducts, setAllProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [searchText, setSearchText] = useState("");
 
@@ -13,7 +13,7 @@ const useProducts = () => {
         setFilteredProducts(data);
     }
 
-    const getRestaurants = async () => {
+    const getProducts = async () => {
         const data = await fetch(
             Product_CDN
         );
@@ -23,7 +23,7 @@ const useProducts = () => {
     }
 
     useEffect(() => {
-        getRestaurants();
+        getProducts();
     }, [])
 
     return [allProducts, filteredProducts, searchText, setSearchText, handleSearch];
