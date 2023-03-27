@@ -29,4 +29,4 @@ const useProducts = () => {
     return [allProducts, filteredProducts, searchText, setSearchText, handleSearch];
 }
 
-export default useProducts
+export default useProducts;

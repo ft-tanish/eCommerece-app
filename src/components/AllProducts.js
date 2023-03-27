@@ -8,11 +8,12 @@ const AllProducts = () => {
     const [allProducts, filteredProducts, searchText, setSearchText, handleSearch] = useProducts();
 
     if (!allProducts) return null;
+    console.log(allProducts)
 
     return (
         <>
             <h1 className='shop-title'>Shop Now</h1>
-            {allProducts?.length === undefined ? <Shimmer /> : (
+            {allProducts?.length === 0 ? <Shimmer /> : (
                 <>
                     <div className='search-cointainer'>
                         <input type="text"
